@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MikuBlog/utools-fund.git"
+    "url": "git+https://github.com/MikuBlog/utools-food.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MikuBlog/utools-fund/issues"
+    "url": "https://github.com/MikuBlog/utools-food/issues"
   },
-  "homepage": "https://github.com/MikuBlog/utools-fund#readme",
+  "homepage": "https://github.com/MikuBlog/utools-food#readme",
   "dependencies": {
     "axios": "^0.27.2"
   }
