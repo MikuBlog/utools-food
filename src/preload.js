@@ -3,11 +3,20 @@ const axios = require('axios');
 function transform(value) {
    switch (value) {
       case 1:
-         return '推荐';
+         return {
+            level: '推荐',
+            icon: './assets/good.png'
+         };
       case 2:
-         return '适量';
+         return {
+            level: '适量',
+            icon: './assets/just.png'
+         };
       case 3:
-         return '少吃';
+         return {
+            level: '少吃',
+            icon: './assets/bad.png'
+         };
    }
 }
 
@@ -18,11 +27,15 @@ function handleOutput(searchWord, callbackSetList) {
    }).then(res => {
       const { code, data } = res.data;
       if (code && data.list.length) {
-         callbackSetList(data.list.map(val => ({
-            title: val.name,
-            description: `卡路里：${val.calory}千卡/100g\t推荐指数：${transform(val.healthLevel)}`,
-            url: `https://www.baidu.com/s?wd=${encodeURIComponent(val.name)}`,
-         })))
+         callbackSetList(data.list.map(val => {
+            const transformObj = transform(val.healthLevel);
+            return {
+               title: val.name,
+               description: `卡路里：${val.calory}千卡/100g\t推荐指数：${transformObj.level}`,
+               url: `https://www.baidu.com/s?wd=${encodeURIComponent(val.name)}`,
+               icon: transformObj.icon,
+            }
+         }))
       } else {
          callbackSetList([{
             title: '暂无查询结果'
