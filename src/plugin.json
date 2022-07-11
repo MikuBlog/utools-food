@@ -10,6 +10,14 @@
       "code": "utools-food",
       "explain": "严防高热量，健康好生活！", 
       "cmds": [
+        "食物",
+        "食物卡路里"
+      ]
+    },
+    {
+      "code": "utools-food-super",
+      "explain": "严防高热量，健康好生活！", 
+      "cmds": [
         {
 					"type": "over",
 					"label": "食物卡路里"
